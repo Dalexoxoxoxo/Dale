@@ -1,0 +1,15 @@
+# ========================
+# Trashcan Skript
+# Clears entire inventory including armor & offhand
+# ========================
+
+command /trashcan:
+    trigger:
+        # Clear main inventory
+        clear player's inventory
+        # Clear armor slots
+        clear player's armor
+        # Clear offhand slot
+        set player's offhand tool to air
+        # Send confirmation message
+        send "&c&l[Trashcan] &fYour entire inventory has been cleared!" to player
