@@ -88,6 +88,25 @@ export interface SiteConfig {
     highlights?: string[];
   }[];
 
+  /**
+   * Files visitors can download — EMPTY by default. Add your own!
+   * Drop the actual file into the /public folder, then add an entry here.
+   */
+  downloads: {
+    /** Display name shown on the card — e.g. "Sonic Boom Mace v1.2.0" */
+    name: string;
+    /** Short description of what the file is / does */
+    description: string;
+    /** Path to the file in /public — e.g. "/SonicBoomMace-1.2.0.jar" */
+    filePath: string;
+    /** File type badge shown on the card — e.g. "JAR", "SK", "ZIP", "PDF" */
+    fileType: string;
+    /** Optional tags */
+    tags?: string[];
+    /** Optional: version string shown next to the name */
+    version?: string;
+  }[];
+
   accent: "violet" | "rose" | "amber" | "cyan" | "orange";
 }
 
@@ -200,6 +219,46 @@ export const siteConfig: SiteConfig = {
   // ════════════════════════════════════════════════════════════
   experience: [
     // 👆 Add your experience here — see the template in the comment above
+  ],
+
+  // ════════════════════════════════════════════════════════════
+  //  📦  DOWNLOADS  —  files visitors can download from your site
+  //
+  //  HOW TO ADD A FILE:
+  //  1. Upload your file to the /public folder (next to this repo's README)
+  //     — e.g. /public/MyPlugin.jar
+  //  2. Add an entry below using the template
+  //
+  //  Copy this template and paste it inside the [] below:
+  //
+  //    {
+  //      name: "My Cool Plugin",
+  //      description: "What it does, in one or two sentences.",
+  //      filePath: "/MyPlugin.jar",
+  //      fileType: "JAR",
+  //      version: "1.0.0",
+  //      tags: ["Minecraft", "Plugin"],
+  //    },
+  //
+  // ════════════════════════════════════════════════════════════
+  downloads: [
+    {
+      name: "Sonic Boom Mace",
+      description:
+        "A custom Minecraft plugin that adds a powerful sonic boom mace weapon. Drop the JAR into your server's plugins folder and restart.",
+      filePath: "/SonicBoomMace-1.2.0.jar",
+      fileType: "JAR",
+      version: "1.2.0",
+      tags: ["Minecraft", "Plugin", "Weapon"],
+    },
+    {
+      name: "Trashcan",
+      description:
+        "A Skript plugin that adds a simple trashcan to your Minecraft server. Players can drop items into it to dispose of them safely.",
+      filePath: "/Trashcan.sk",
+      fileType: "SK",
+      tags: ["Minecraft", "Skript", "Utility"],
+    },
   ],
 
   // ════════════════════════════════════════════════════════════
