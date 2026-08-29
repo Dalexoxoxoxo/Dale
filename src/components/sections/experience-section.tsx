@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import { Katana } from "@/components/icons/katana";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { siteConfig } from "@/config/site";
 
@@ -47,8 +48,8 @@ export function ExperienceSection() {
                 }
               >
                 {/* Dot */}
-                <span className="absolute left-4 sm:left-1/2 top-1 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-background border border-border">
-                  <Briefcase className="h-4 w-4 text-primary" />
+                <span className="absolute left-4 sm:left-1/2 top-1 -translate-x-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-background border border-border">
+                  <Katana className="w-5 h-5" />
                 </span>
 
                 <div className="rounded-xl border border-border bg-card p-5 shadow-sm">

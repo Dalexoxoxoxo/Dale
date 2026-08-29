@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { Katana } from "@/components/icons/katana";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
@@ -57,8 +58,8 @@ export function Navbar() {
             onClick={(e) => handleNavClick(e, "#home")}
             className="group flex items-center gap-2"
           >
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground text-sm font-bold transition-transform group-hover:scale-110">
-              {siteConfig.avatarFallbackInitials}
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 via-fuchsia-500 to-pink-500 text-white transition-transform group-hover:scale-110 group-hover:rotate-3">
+              <Katana className="w-5 h-5" />
             </span>
             <span className="font-semibold tracking-tight">
               {siteConfig.name}

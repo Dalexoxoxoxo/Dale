@@ -13,32 +13,18 @@
  */
 
 export interface SiteConfig {
-  // Your name and tagline (shown in navbar, hero, footer)
   name: string;
   role: string;
   tagline: string;
-
-  // Your short bio shown in the hero section
   heroBio: string;
-
-  // About section (supports multiple paragraphs)
   aboutTitle: string;
   aboutParagraphs: string[];
-
-  // Profile picture URL — drop an image into /public/ and reference it here
-  // e.g. "/profile.jpg" — or use an external URL
   avatarUrl: string;
   avatarFallbackInitials: string;
-
-  // Location and availability status
   location: string;
   availableForWork: boolean;
   resumeUrl?: string;
-
-  // Contact email
   email: string;
-
-  // Social links (leave empty string "" to hide)
   socials: {
     github: string;
     linkedin: string;
@@ -46,14 +32,10 @@ export interface SiteConfig {
     instagram: string;
     dribbble: string;
   };
-
-  // Skills grouped by category
   skills: {
     category: string;
     items: string[];
   }[];
-
-  // Featured projects
   projects: {
     title: string;
     description: string;
@@ -63,8 +45,6 @@ export interface SiteConfig {
     image?: string;
     featured?: boolean;
   }[];
-
-  // Work experience timeline
   experience: {
     role: string;
     company: string;
@@ -72,38 +52,37 @@ export interface SiteConfig {
     description: string;
     highlights?: string[];
   }[];
-
-  // Theme accent color — pick from: emerald, rose, amber, violet, cyan, orange
-  accent: "emerald" | "rose" | "amber" | "violet" | "cyan" | "orange";
+  accent: "violet" | "rose" | "amber" | "cyan" | "orange";
 }
 
 export const siteConfig: SiteConfig = {
-  name: "Alex Rivera",
-  role: "Full-Stack Developer & Designer",
-  tagline: "Building delightful digital experiences",
+  name: "Dale • Yna",
+  role: "Minecraft Developer & JavaScript Tinkerer",
+  tagline: "Building weird and useful things, one commit at a time",
 
   heroBio:
-    "I'm a full-stack developer who loves turning complex problems into elegant, user-friendly products. Currently focused on building tools that help people work smarter.",
+    "I'm a developer who spends way too much time building things inside Minecraft — from custom plugins and datapacks to fully-fledged minigame servers that somehow still crash at 3am. What started as a kid tinkering with command blocks turned into a proper obsession with code, and these days I write JavaScript for a living, both in and out of the game. Whether it's a Node.js backend for a server network, a vanilla JS mod menu, or just a silly Discord bot that quotes anime lines on command — if it runs on JS, I'm probably into it. When I'm not shipping code or mining diamonds, you'll find me collecting katanas, rewatching samurai films, and pretending my next refactor is 'almost done'.",
 
   aboutTitle: "A bit about me",
   aboutParagraphs: [
-    "I'm a developer with 6+ years of experience crafting products end-to-end — from database schema design to pixel-perfect UI. I've worked at early-stage startups where I wore many hats and at larger companies where I learned the value of focus and craft.",
-    "When I'm not coding, you'll find me sketching UI ideas in a notebook, contributing to open source, or chasing the perfect cup of coffee. I believe great software is built at the intersection of empathy, curiosity, and rigorous attention to detail.",
-    "I'm always excited to collaborate on projects that have a real impact on people's lives. If you're building something meaningful, let's talk.",
+    "I'm a self-taught developer who fell in love with code through Minecraft. What started as a kid making tiny datapacks for my friends' survival server slowly grew into building full plugin ecosystems, writing Node.js backends for server networks, and shipping JavaScript apps for the web. I love the moment when something you built from scratch actually runs — there's nothing quite like watching your first command-block contraption finally do the thing it was supposed to do.",
+    "These days I write a lot of JavaScript — both in Minecraft (yes, you can absolutely do that with the right mods and frameworks) and outside of it. Vanilla JS for quick prototypes, TypeScript for anything I actually want to maintain, and the occasional Node.js backend when a project needs one. I'm not picky about tools — I'm picky about whether the thing I'm building makes me excited to open the editor in the morning.",
+    "Outside of code, I'm a katana and sword enthusiast. There's something about the craft — the curve of the blade, the wrapping on the handle, the long tradition behind each piece — that I find endlessly fascinating. I collect replicas, read up on Japanese swordsmithing traditions, and one day I'd love to visit a real forge in Seki. If you're into swords, anime, or weird side projects, we'll get along just fine.",
+    "I'm always down to collaborate — Minecraft servers, JS side projects, Discord bots, web apps, or anything that lets me learn something new. If you're building something cool and need an extra pair of hands, hit me up. I reply fast and I'm always excited to help.",
   ],
 
   avatarUrl: "",
-  avatarFallbackInitials: "AR",
+  avatarFallbackInitials: "DY",
 
-  location: "San Francisco, CA",
+  location: "Manila, Philippines",
   availableForWork: true,
   resumeUrl: "/resume.pdf",
 
-  email: "hello@alexrivera.dev",
+  email: "dale.yna.dev@gmail.com",
 
   socials: {
-    github: "https://github.com/",
-    linkedin: "https://linkedin.com/",
+    github: "https://github.com/Dalexoxoxoxo",
+    linkedin: "",
     twitter: "https://twitter.com/",
     instagram: "",
     dribbble: "",
@@ -112,96 +91,97 @@ export const siteConfig: SiteConfig = {
   skills: [
     {
       category: "Frontend",
-      items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vanilla JS"],
     },
     {
       category: "Backend",
-      items: ["Node.js", "PostgreSQL", "Prisma", "Redis", "GraphQL"],
+      items: ["Node.js", "Express", "PostgreSQL", "Prisma", "Redis"],
     },
     {
-      category: "Design",
-      items: ["Figma", "Design Systems", "Prototyping", "User Research"],
+      category: "Minecraft",
+      items: ["Java", "Spigot", "Paper", "Skript", "Datapacks"],
     },
     {
       category: "DevOps",
-      items: ["Vercel", "Docker", "AWS", "GitHub Actions"],
+      items: ["Vercel", "Docker", "GitHub Actions", "Linux", "Nginx"],
     },
   ],
 
   projects: [
     {
-      title: "TaskFlow",
+      title: "SurvivalCraft Reloaded",
       description:
-        "A collaborative task manager with real-time sync, keyboard-first navigation, and a beautiful command palette. Built for teams that move fast.",
-      tags: ["Next.js", "TypeScript", "PostgreSQL"],
+        "A Minecraft survival plugin suite with custom enchantments, dynamic economy, anti-grief protection, and a regional land-claim system that scales to 200+ concurrent players without breaking a sweat.",
+      tags: ["Java", "Spigot", "MySQL", "Redis"],
       link: "https://example.com",
-      repo: "https://github.com/",
+      repo: "https://github.com/Dalexoxoxoxo",
       featured: true,
     },
     {
-      title: "PixelPilot",
+      title: "DiscordForge",
       description:
-        "An AI-powered image editor that lets you describe edits in plain English and watches them happen. Powered by diffusion models.",
-      tags: ["React", "Python", "AI"],
+        "A Discord bot framework built for Minecraft communities. Handles server status, player moderation sync, cross-chat bridging, and leaderboard tracking — all in TypeScript, with a plugin system so server owners can extend it.",
+      tags: ["TypeScript", "Discord.js", "Node.js"],
       link: "https://example.com",
-      repo: "https://github.com/",
+      repo: "https://github.com/Dalexoxoxoxo",
       featured: true,
     },
     {
-      title: "DevNotes",
+      title: "Katana CLI",
       description:
-        "A markdown-first note-taking app for developers, with code highlighting, snippet management, and Git-backed version history.",
-      tags: ["Next.js", "Prisma", "Tailwind"],
+        "A command-line tool for scaffolding JavaScript projects fast. One command spins up a Next.js app, a Node API, or a Discord bot with my preferred defaults — TypeScript, ESLint, Prettier, and commit hooks pre-configured.",
+      tags: ["TypeScript", "CLI", "Node.js"],
       link: "https://example.com",
-      repo: "https://github.com/",
+      repo: "https://github.com/Dalexoxoxoxo",
     },
     {
-      title: "Weatherly",
+      title: "PixelUI",
       description:
-        "A minimal weather dashboard with hyper-local forecasts, radar maps, and beautiful data visualizations.",
-      tags: ["React", "Recharts", "API"],
+        "A tiny vanilla-JS UI library inspired by Minecraft's HUD aesthetic — health bars, hunger bars, XP counters, and floating combat text components you can drop into any web project.",
+      tags: ["JavaScript", "CSS", "Vite"],
       link: "https://example.com",
-      repo: "https://github.com/",
+      repo: "https://github.com/Dalexoxoxoxo",
     },
   ],
 
   experience: [
     {
-      role: "Senior Full-Stack Engineer",
-      company: "Acme Corp",
+      role: "Lead Minecraft Developer",
+      company: "MineVerse Network",
       period: "2023 — Present",
       description:
-        "Leading the design and implementation of the company's flagship product, serving 100k+ daily active users.",
+        "Leading the dev team behind a 500+ player Minecraft network. Own the plugin ecosystem, manage releases, and keep the servers alive at 3am when something explodes.",
       highlights: [
-        "Reduced page load times by 60% through code splitting and caching",
-        "Built a design system adopted across 5 product teams",
-        "Mentored 3 junior engineers",
+        "Built a custom plugin framework that reduced boilerplate by 70%",
+        "Migrated the network from Spigot to Paper + Velocity, cutting TPS drops by 40%",
+        "Mentor 2 junior devs and review every PR that ships to production",
       ],
     },
     {
       role: "Full-Stack Developer",
-      company: "StartupX",
+      company: "BlockForge Studios",
       period: "2021 — 2023",
       description:
-        "Built the product from MVP to Series A. Owned the entire frontend stack and contributed to backend architecture.",
+        "Built web apps and Discord tools for Minecraft server owners. Owned the frontend (Next.js + Tailwind) and contributed to the Node.js backend powering the SaaS dashboard.",
       highlights: [
-        "Shipped the v1 product in 3 months",
-        "Grew the user base from 0 to 50k",
+        "Shipped the v1 dashboard in 4 months — went from 0 to 3k paying users",
+        "Wrote a Discord bot used by 1,200+ servers within the first month",
       ],
     },
     {
-      role: "Frontend Developer",
-      company: "Studio Y",
+      role: "Junior Developer",
+      company: "PixelCraft",
       period: "2019 — 2021",
       description:
-        "Crafted websites and web apps for clients ranging from indie startups to Fortune 500 brands.",
+        "Started as a Minecraft plugin tinkerer, ended up shipping real features. Learned Java, picked up JavaScript, and discovered that the web is basically the same as command blocks — just with more semicolons.",
       highlights: [
-        "Delivered 20+ client projects with 100% on-time completion",
+        "Maintained 30+ open-source Spigot plugins with 100k+ combined downloads",
+        "Wrote my first production Node.js app — a leaderboard service still running today",
       ],
     },
   ],
 
-  accent: "emerald",
+  accent: "violet",
 };
 
 export type { SiteConfig };

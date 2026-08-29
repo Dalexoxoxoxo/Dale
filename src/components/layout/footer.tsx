@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Katana } from "@/components/icons/katana";
 import { siteConfig } from "@/config/site";
 
 const footerLinks = [
@@ -39,8 +40,8 @@ export function Footer() {
           {/* Brand + bio */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground text-sm font-bold">
-                {siteConfig.avatarFallbackInitials}
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 via-fuchsia-500 to-pink-500 text-white">
+                <Katana className="w-5 h-5" />
               </span>
               <span className="font-semibold tracking-tight">
                 {siteConfig.name}

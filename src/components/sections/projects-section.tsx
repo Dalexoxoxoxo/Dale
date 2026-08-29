@@ -103,7 +103,7 @@ export function ProjectsSection() {
               </div>
 
               {/* Decorative accent on hover */}
-              <div className="h-1 w-full bg-gradient-to-r from-primary/0 via-primary/40 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="h-1 w-full bg-gradient-to-r from-violet-500/0 via-fuchsia-500/50 to-pink-500/0 opacity-0 group-hover:opacity-100 transition-opacity" />
             </motion.article>
           ))}
         </div>

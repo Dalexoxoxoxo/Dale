@@ -6,6 +6,7 @@ import { ArrowDown, Github, Linkedin, Twitter, Mail, MapPin, Sparkles } from "lu
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Katana } from "@/components/icons/katana";
 import { siteConfig } from "@/config/site";
 
 const container = {
@@ -35,13 +36,14 @@ export function HeroSection() {
       id="home"
       className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden"
     >
-      {/* Decorative background */}
+      {/* Decorative background — purple & pink blobs */}
       <div
         aria-hidden
         className="absolute inset-0 -z-10 overflow-hidden"
       >
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute right-0 top-1/3 h-[300px] w-[300px] rounded-full bg-accent/10 blur-3xl" />
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-violet-500/10 blur-3xl" />
+        <div className="absolute right-0 top-1/3 h-[300px] w-[300px] rounded-full bg-pink-500/15 blur-3xl" />
+        <div className="absolute left-0 bottom-0 h-[280px] w-[280px] rounded-full bg-fuchsia-500/10 blur-3xl" />
       </div>
 
       <div className="mx-auto max-w-6xl w-full px-4 sm:px-6 lg:px-8">
@@ -57,11 +59,11 @@ export function HeroSection() {
               {siteConfig.availableForWork ? (
                 <Badge
                   variant="outline"
-                  className="rounded-full py-1.5 pl-2 pr-3 gap-1.5 bg-emerald-500/10 border-emerald-500/30 text-emerald-600 dark:text-emerald-400"
+                  className="rounded-full py-1.5 pl-2 pr-3 gap-1.5 bg-violet-500/10 border-violet-500/30 text-violet-600 dark:text-violet-300"
                 >
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet-500 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-violet-500" />
                   </span>
                   Available for work
                 </Badge>
@@ -76,7 +78,7 @@ export function HeroSection() {
             <motion.div variants={item} className="space-y-3">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
                 Hi, I&apos;m{" "}
-                <span className="bg-gradient-to-r from-primary via-primary to-primary/60 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-violet-500 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent">
                   {siteConfig.name}
                 </span>
               </h1>
@@ -138,24 +140,54 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Avatar / Visual */}
+          {/* Avatar + katana composition */}
           <motion.div
             variants={item}
             className="lg:col-span-5 flex justify-center"
           >
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 via-transparent to-accent/20 rounded-full blur-2xl" />
-              <Avatar className="relative h-48 w-48 sm:h-64 sm:w-64 rounded-full border-4 border-background shadow-xl">
-                {siteConfig.avatarUrl ? (
-                  <AvatarImage
-                    src={siteConfig.avatarUrl}
-                    alt={siteConfig.name}
-                  />
-                ) : null}
-                <AvatarFallback className="text-5xl font-bold bg-gradient-to-br from-primary to-primary/60 text-primary-foreground">
-                  {siteConfig.avatarFallbackInitials}
-                </AvatarFallback>
-              </Avatar>
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80">
+              {/* Glow backdrop */}
+              <div className="absolute -inset-6 bg-gradient-to-tr from-violet-500/30 via-fuchsia-500/20 to-pink-500/30 rounded-full blur-2xl" />
+
+              {/* Katana — floating diagonally behind the avatar */}
+              <motion.div
+                aria-hidden
+                initial={{ opacity: 0, rotate: -15, scale: 0.8 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                transition={{
+                  delay: 0.6,
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                <motion.div
+                  animate={{ rotate: [-2, 2, -2] }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="origin-center"
+                >
+                  <Katana className="w-72 sm:w-96 h-auto drop-shadow-[0_0_25px_rgba(168,85,247,0.5)]" />
+                </motion.div>
+              </motion.div>
+
+              {/* Avatar circle on top */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Avatar className="relative h-36 w-36 sm:h-44 sm:w-44 rounded-full border-4 border-background shadow-2xl">
+                  {siteConfig.avatarUrl ? (
+                    <AvatarImage
+                      src={siteConfig.avatarUrl}
+                      alt={siteConfig.name}
+                    />
+                  ) : null}
+                  <AvatarFallback className="text-4xl font-bold bg-gradient-to-br from-violet-500 via-fuchsia-500 to-pink-500 text-white">
+                    {siteConfig.avatarFallbackInitials}
+                  </AvatarFallback>
+                </Avatar>
+              </div>
             </div>
           </motion.div>
         </motion.div>
